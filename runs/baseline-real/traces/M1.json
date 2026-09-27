@@ -1,0 +1,19 @@
+{
+  "id": "M1",
+  "category": "medium",
+  "question": "Which artist has released the most albums?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT\n    Artist.Name,\n    COUNT(*) AS AlbumCount\nFROM\n    Album\nJOIN\n    Artist ON Album.ArtistId = Artist.ArtistId\nGROUP BY\n    Artist.ArtistId,\n    Artist.Name\nORDER BY\n    AlbumCount DESC\nLIMIT 1;",
+  "raw_response": "```sql\nSELECT\n    Artist.Name,\n    COUNT(*) AS AlbumCount\nFROM\n    Album\nJOIN\n    Artist ON Album.ArtistId = Artist.ArtistId\nGROUP BY\n    Artist.ArtistId,\n    Artist.Name\nORDER BY\n    AlbumCount DESC\nLIMIT 1;\n```\n",
+  "execution_passed": false,
+  "execution_error": "row mismatch",
+  "model_grade_passed": false,
+  "model_grade_rationale": "unparseable judge output: ",
+  "passed": false,
+  "latency_ms": 326.82,
+  "wall_ms": 326.86,
+  "input_tokens": 473,
+  "output_tokens": 180,
+  "cost_usd": 8.947e-05
+}

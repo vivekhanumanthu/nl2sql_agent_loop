@@ -1,0 +1,19 @@
+{
+  "id": "H2",
+  "category": "hard",
+  "question": "For genres with more than 100 tracks, what is the average track length in minutes for each?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT G.Name AS GenreName, AVG(T.Milliseconds) / 60000.0 AS AvgMinutes FROM Track T JOIN Genre G ON T.GenreId = G.GenreId GROUP BY G.GenreId HAVING COUNT(*) > 100 ORDER BY G.Name;",
+  "raw_response": "```sql\nSELECT G.Name AS GenreName, AVG(T.Milliseconds) / 60000.0 AS AvgMinutes FROM Track T JOIN Genre G ON T.GenreId = G.GenreId GROUP BY G.GenreId HAVING COUNT(*) > 100 ORDER BY G.Name;\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 130.55,
+  "wall_ms": 0.06,
+  "input_tokens": 217,
+  "output_tokens": 31,
+  "cost_usd": 2.48e-05
+}

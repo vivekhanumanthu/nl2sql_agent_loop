@@ -1,0 +1,19 @@
+{
+  "id": "M5",
+  "category": "medium",
+  "question": "Which playlist has the most tracks, and how many tracks is that?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT p.Name, COUNT(pt.TrackId) AS TrackCount\nFROM Playlist p\nJOIN PlaylistTrack pt ON p.PlaylistId = pt.PlaylistId\nGROUP BY p.PlaylistId, p.Name\nORDER BY TrackCount DESC\nLIMIT 1;",
+  "raw_response": "```sql\nSELECT p.Name, COUNT(pt.TrackId) AS TrackCount\nFROM Playlist p\nJOIN PlaylistTrack pt ON p.PlaylistId = pt.PlaylistId\nGROUP BY p.PlaylistId, p.Name\nORDER BY TrackCount DESC\nLIMIT 1;\n```\n",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "\u2013 The query correctly returns the playlist with the highest track count, matching the expected result.",
+  "passed": true,
+  "latency_ms": 601.94,
+  "wall_ms": 601.99,
+  "input_tokens": 479,
+  "output_tokens": 195,
+  "cost_usd": 9.442e-05
+}

@@ -1,0 +1,19 @@
+{
+  "id": "REG2",
+  "category": "hard",
+  "question": "What was the total revenue generated in the year 2010?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT SUM(Total) AS TotalRevenue FROM Invoice WHERE strftime('%Y', InvoiceDate) = '2010';",
+  "raw_response": "```sql\nSELECT SUM(Total) AS TotalRevenue FROM Invoice WHERE strftime('%Y', InvoiceDate) = '2010';\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 158.68,
+  "wall_ms": 0.05,
+  "input_tokens": 216,
+  "output_tokens": 13,
+  "cost_usd": 4.02e-05
+}

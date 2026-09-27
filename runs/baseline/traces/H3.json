@@ -1,0 +1,19 @@
+{
+  "id": "H3",
+  "category": "hard",
+  "question": "List any customers who have never made a purchase (no invoices at all).",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT C.CustomerId, C.FirstName, C.LastName FROM Customer C LEFT JOIN Invoice I ON C.CustomerId = I.CustomerId WHERE I.InvoiceId IS NULL;",
+  "raw_response": "```sql\nSELECT C.CustomerId, C.FirstName, C.LastName FROM Customer C LEFT JOIN Invoice I ON C.CustomerId = I.CustomerId WHERE I.InvoiceId IS NULL;\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 127.75,
+  "wall_ms": 0.05,
+  "input_tokens": 219,
+  "output_tokens": 21,
+  "cost_usd": 4.545e-05
+}

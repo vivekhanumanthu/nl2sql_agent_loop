@@ -1,0 +1,14 @@
+{
+  "baseline_run": "baseline",
+  "candidate_run": "fixed",
+  "baseline_pass_rate": 1.0,
+  "candidate_pass_rate": 1.0,
+  "pass_rate_delta": 0.0,
+  "cost_change_pct": -51.86,
+  "p95_latency_change_pct": 2.5,
+  "regressions": [],
+  "fixes": [],
+  "unchanged_count": 16,
+  "gate_failures": [],
+  "gate_passed": true
+}

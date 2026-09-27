@@ -1,0 +1,48 @@
+
+GATE FAILED:
+ - 4 regression(s) found (max allowed: 0)
+ - candidate pass rate 75.00% below min 80.00%
+ - p95 latency increased 2725.1% (max allowed 150%)
+{
+  "baseline_run": "baseline",
+  "candidate_run": "baseline-real",
+  "baseline_pass_rate": 1.0,
+  "candidate_pass_rate": 0.75,
+  "pass_rate_delta": -0.25,
+  "cost_change_pct": 66.65,
+  "p95_latency_change_pct": 2725.09,
+  "regressions": [
+    {
+      "id": "H1",
+      "category": "hard",
+      "question": "Which sales support employee has generated the highest total sales, and what is the amount?",
+      "reason": "row mismatch"
+    },
+    {
+      "id": "H2",
+      "category": "hard",
+      "question": "For genres with more than 100 tracks, what is the average track length in minutes for each?",
+      "reason": "row mismatch"
+    },
+    {
+      "id": "M1",
+      "category": "medium",
+      "question": "Which artist has released the most albums?",
+      "reason": "row mismatch"
+    },
+    {
+      "id": "M2",
+      "category": "medium",
+      "question": "Who are the top 3 customers by total amount spent, and how much did each spend?",
+      "reason": "row mismatch"
+    }
+  ],
+  "fixes": [],
+  "unchanged_count": 12,
+  "gate_failures": [
+    "4 regression(s) found (max allowed: 0)",
+    "candidate pass rate 75.00% below min 80.00%",
+    "p95 latency increased 2725.1% (max allowed 150%)"
+  ],
+  "gate_passed": false
+}

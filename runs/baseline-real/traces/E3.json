@@ -1,0 +1,19 @@
+{
+  "id": "E3",
+  "category": "easy",
+  "question": "How many customers are from Canada?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT COUNT(*) AS CanadaCustomerCount\nFROM Customer\nWHERE Country = 'Canada';",
+  "raw_response": "```sql\nSELECT COUNT(*) AS CanadaCustomerCount\nFROM Customer\nWHERE Country = 'Canada';\n```\n",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "\u2013 correct count of Canadian customers returned.",
+  "passed": true,
+  "latency_ms": 690.4,
+  "wall_ms": 690.45,
+  "input_tokens": 472,
+  "output_tokens": 60,
+  "cost_usd": 5.34e-05
+}

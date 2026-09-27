@@ -1,0 +1,19 @@
+{
+  "id": "H3",
+  "category": "hard",
+  "question": "List any customers who have never made a purchase (no invoices at all).",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT *\nFROM Customer\nWHERE CustomerId NOT IN (\n    SELECT CustomerId\n    FROM Invoice\n);",
+  "raw_response": "```sql\nSELECT *\nFROM Customer\nWHERE CustomerId NOT IN (\n    SELECT CustomerId\n    FROM Invoice\n);\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "\u2013 The query correctly returns an empty set, matching the ground\u2011truth that all customers have invoices.",
+  "passed": true,
+  "latency_ms": 2554.22,
+  "wall_ms": 2554.27,
+  "input_tokens": 480,
+  "output_tokens": 77,
+  "cost_usd": 5.91e-05
+}

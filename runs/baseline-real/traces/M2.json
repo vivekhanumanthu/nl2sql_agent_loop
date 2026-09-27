@@ -1,0 +1,19 @@
+{
+  "id": "M2",
+  "category": "medium",
+  "question": "Who are the top 3 customers by total amount spent, and how much did each spend?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT\n    c.CustomerId,\n    c.FirstName,\n    c.LastName,\n    SUM(i.Total) AS TotalSpent\nFROM\n    Customer c\nJOIN\n    Invoice i\n    ON c.CustomerId = i.CustomerId\nGROUP BY\n    c.CustomerId,\n    c.FirstName,\n    c.LastName\nORDER BY\n    TotalSpent DESC\nLIMIT 3;",
+  "raw_response": "```sql\nSELECT\n    c.CustomerId,\n    c.FirstName,\n    c.LastName,\n    SUM(i.Total) AS TotalSpent\nFROM\n    Customer c\nJOIN\n    Invoice i\n    ON c.CustomerId = i.CustomerId\nGROUP BY\n    c.CustomerId,\n    c.FirstName,\n    c.LastName\nORDER BY\n    TotalSpent DESC\nLIMIT 3;\n```\n",
+  "execution_passed": false,
+  "execution_error": "row mismatch",
+  "model_grade_passed": false,
+  "model_grade_rationale": "unparseable judge output: ",
+  "passed": false,
+  "latency_ms": 686.83,
+  "wall_ms": 686.88,
+  "input_tokens": 484,
+  "output_tokens": 185,
+  "cost_usd": 9.18e-05
+}

@@ -1,0 +1,46 @@
+name: NL2SQL Continuous Eval
+
+on:
+  push:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Unit tests (graders, gating, agent config)
+        run: pytest -q
+
+      - name: Run eval suite for the current commit's config
+        run: python -m runner.run_eval --config configs/agent_v1.yaml --run-id ci-${{ github.run_number }}
+
+      - name: Generate HTML report
+        run: python -m report.generate_report
+
+      - name: Diff against committed baseline and gate
+        run: >
+          python -m runner.diff
+          --baseline runs/baseline
+          --candidate runs/ci-${{ github.run_number }}
+          --thresholds thresholds.yaml
+          --out runs/ci-${{ github.run_number }}/diff.json
+
+      - name: Upload run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-run-${{ github.run_number }}
+          path: |
+            runs/ci-${{ github.run_number }}
+            report/index.html

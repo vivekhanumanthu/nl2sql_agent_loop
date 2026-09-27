@@ -1,0 +1,19 @@
+{
+  "id": "M2",
+  "category": "medium",
+  "question": "Who are the top 3 customers by total amount spent, and how much did each spend?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT C.FirstName || ' ' || C.LastName AS CustomerName, SUM(I.Total) AS TotalSpent FROM Customer C JOIN Invoice I ON C.CustomerId = I.CustomerId GROUP BY C.CustomerId ORDER BY TotalSpent DESC LIMIT 3;",
+  "raw_response": "```sql\nSELECT C.FirstName || ' ' || C.LastName AS CustomerName, SUM(I.Total) AS TotalSpent FROM Customer C JOIN Invoice I ON C.CustomerId = I.CustomerId GROUP BY C.CustomerId ORDER BY TotalSpent DESC LIMIT 3;\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 137.2,
+  "wall_ms": 0.05,
+  "input_tokens": 216,
+  "output_tokens": 33,
+  "cost_usd": 2.52e-05
+}

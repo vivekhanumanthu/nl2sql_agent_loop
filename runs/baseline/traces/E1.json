@@ -1,0 +1,19 @@
+{
+  "id": "E1",
+  "category": "easy",
+  "question": "How many tracks are in the store in total?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT COUNT(*) AS cnt FROM Track;",
+  "raw_response": "```sql\nSELECT COUNT(*) AS cnt FROM Track;\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 160.48,
+  "wall_ms": 0.19,
+  "input_tokens": 215,
+  "output_tokens": 8,
+  "cost_usd": 3.705e-05
+}

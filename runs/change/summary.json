@@ -1,0 +1,40 @@
+{
+  "run_id": "change",
+  "timestamp": "2026-09-26T17:52:11.077701+00:00",
+  "config_path": "configs/agent_v2.yaml",
+  "config_version": "v2-cost-optimized",
+  "config_hash": "59b424bbeca3",
+  "model": "mock-nl2sql-v2-lite",
+  "provider": "mock",
+  "total_cases": 16,
+  "passed_cases": 13,
+  "pass_rate": 0.8125,
+  "by_category": {
+    "easy": {
+      "total": 3,
+      "passed": 3,
+      "pass_rate": 1.0
+    },
+    "hard": {
+      "total": 6,
+      "passed": 4,
+      "pass_rate": 0.6667
+    },
+    "medium": {
+      "total": 5,
+      "passed": 5,
+      "pass_rate": 1.0
+    },
+    "refusal": {
+      "total": 2,
+      "passed": 1,
+      "pass_rate": 0.5
+    }
+  },
+  "total_cost_usd": 0.0002476,
+  "avg_latency_ms": 173.51,
+  "p50_latency_ms": 165.99,
+  "p95_latency_ms": 219.74,
+  "total_input_tokens": 2087,
+  "total_output_tokens": 336
+}

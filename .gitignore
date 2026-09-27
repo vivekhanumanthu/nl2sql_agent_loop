@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+report/index.html
+# Exploratory local runs; the canonical baseline/change/fixed/live runs are kept.
+runs/baseline-groq/
+runs/baseline-groq-refined/
+runs/my-mock-run/
+runs/my-groq-run/

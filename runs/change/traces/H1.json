@@ -1,0 +1,19 @@
+{
+  "id": "H1",
+  "category": "hard",
+  "question": "Which sales support employee has generated the highest total sales, and what is the amount?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT E.FirstName || ' ' || E.LastName AS EmployeeName, SUM(I.Total) AS TotalSales FROM Employee E JOIN Customer C ON E.EmployeeId = C.SupportRepId JOIN Invoice I ON C.CustomerId = I.CustomerId GROUP BY E.EmployeeId ORDER BY TotalSales DESC LIMIT 1;",
+  "raw_response": "```sql\nSELECT E.FirstName || ' ' || E.LastName AS EmployeeName, SUM(I.Total) AS TotalSales FROM Employee E JOIN Customer C ON E.EmployeeId = C.SupportRepId JOIN Invoice I ON C.CustomerId = I.CustomerId GROUP BY E.EmployeeId ORDER BY TotalSales DESC LIMIT 1;\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 166.44,
+  "wall_ms": 0.05,
+  "input_tokens": 134,
+  "output_tokens": 40,
+  "cost_usd": 2.032e-05
+}

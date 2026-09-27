@@ -1,0 +1,19 @@
+{
+  "id": "M3",
+  "category": "medium",
+  "question": "What is the average invoice total for customers located in the USA?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT AVG(Invoice.Total) AS AvgInvoiceTotal\nFROM Invoice\nJOIN Customer ON Invoice.CustomerId = Customer.CustomerId\nWHERE Customer.Country = 'USA';",
+  "raw_response": "```sql\nSELECT AVG(Invoice.Total) AS AvgInvoiceTotal\nFROM Invoice\nJOIN Customer ON Invoice.CustomerId = Customer.CustomerId\nWHERE Customer.Country = 'USA';\n```\n",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "\u2013 The agent produced the correct SQL and the execution matched the expected average.",
+  "passed": true,
+  "latency_ms": 632.02,
+  "wall_ms": 632.09,
+  "input_tokens": 478,
+  "output_tokens": 193,
+  "cost_usd": 9.375e-05
+}

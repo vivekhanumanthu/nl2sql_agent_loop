@@ -1,0 +1,19 @@
+{
+  "id": "E2",
+  "category": "easy",
+  "question": "List all music genres available, alphabetically.",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT Name FROM Genre ORDER BY Name;",
+  "raw_response": "```sql\nSELECT Name FROM Genre ORDER BY Name;\n```",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "execution matched gold result",
+  "passed": true,
+  "latency_ms": 150.59,
+  "wall_ms": 0.05,
+  "input_tokens": 125,
+  "output_tokens": 9,
+  "cost_usd": 1.216e-05
+}

@@ -1,0 +1,19 @@
+{
+  "id": "M4",
+  "category": "medium",
+  "question": "How many tracks belong to the 'Rock' genre?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT COUNT(*) AS RockTrackCount\nFROM Track\nJOIN Genre ON Track.GenreId = Genre.GenreId\nWHERE Genre.Name = 'Rock';",
+  "raw_response": "```sql\nSELECT COUNT(*) AS RockTrackCount\nFROM Track\nJOIN Genre ON Track.GenreId = Genre.GenreId\nWHERE Genre.Name = 'Rock';\n```\n",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "\u2013 The SQL correctly counts tracks with Genre.Name = 'Rock' and matches the expected result.",
+  "passed": true,
+  "latency_ms": 496.89,
+  "wall_ms": 496.94,
+  "input_tokens": 476,
+  "output_tokens": 90,
+  "cost_usd": 6.27e-05
+}

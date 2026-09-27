@@ -1,0 +1,17 @@
+name: nl2sql-agent
+version: v2-cost-optimized
+# Cheaper model + trimmed prompt to save tokens. Drops the refusal guardrail
+# and the Album->Artist join hint - this is the "candidate" run diffed
+# against v1 in runs/change.
+model:
+  provider: mock
+  name: mock-nl2sql-v2-lite
+  temperature: 0.7
+  seed: 42
+  max_tokens: 300
+prompt:
+  system: |
+    You are a data analyst agent. Translate the user's question into a SQL query against the Chinook database and return it in a ```sql code block. Keep answers short to save tokens. Use table/column names exactly as given in the schema.
+pricing:
+  input_per_1k: 0.00008
+  output_per_1k: 0.00024

@@ -1,0 +1,19 @@
+{
+  "id": "H4",
+  "category": "hard",
+  "question": "Which 3 artists have sold the most tracks in total by quantity, and how many units did each sell?",
+  "should_refuse": false,
+  "refused": false,
+  "sql": "SELECT\n    Artist.Name,\n    SUM(InvoiceLine.Quantity) AS TotalUnits\nFROM\n    InvoiceLine\nJOIN\n    Track ON InvoiceLine.TrackId = Track.TrackId\nJOIN\n    Album ON Track.AlbumId = Album.AlbumId\nJOIN\n    Artist ON Album.ArtistId = Artist.ArtistId\nGROUP BY\n    Artist.ArtistId,\n    Artist.Name\nORDER BY\n    TotalUnits DESC\nLIMIT 3;",
+  "raw_response": "```sql\nSELECT\n    Artist.Name,\n    SUM(InvoiceLine.Quantity) AS TotalUnits\nFROM\n    InvoiceLine\nJOIN\n    Track ON InvoiceLine.TrackId = Track.TrackId\nJOIN\n    Album ON Track.AlbumId = Album.AlbumId\nJOIN\n    Artist ON Album.ArtistId = Artist.ArtistId\nGROUP BY\n    Artist.ArtistId,\n    Artist.Name\nORDER BY\n    TotalUnits DESC\nLIMIT 3;\n```\n",
+  "execution_passed": true,
+  "execution_error": null,
+  "model_grade_passed": true,
+  "model_grade_rationale": "\u2013 The SQL correctly aggregates total units sold per artist and returns the top three.",
+  "passed": true,
+  "latency_ms": 4813.01,
+  "wall_ms": 4813.08,
+  "input_tokens": 487,
+  "output_tokens": 233,
+  "cost_usd": 0.00010642
+}
