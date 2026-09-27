@@ -239,3 +239,4 @@ server-side dependency, so it can be dropped as-is onto GitHub Pages,
 Vercel, Netlify, or any static host / Space. Not deployed here to keep the
 submission self-contained; see ARCHITECTURE.md for the one remaining step
 (point a static host at `report/`, regenerate on each CI run).
+# nl2sql_agent_loop
